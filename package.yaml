@@ -1,0 +1,66 @@
+name:                svg-subtitler
+version:             0.1.0.0
+github:              "tlshtivo053153/svg-subtitler"
+license:             BSD3
+author:              "tlshtivo053153"
+maintainer:          "muq8inubwlxpcv4oemcazmpfwowkrco-git@yahoo.co.jp"
+copyright:           "2023 tlshtivo053153"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/tlshtivo053153/svg-subtitler#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- diagrams-contrib
+- diagrams-core
+- diagrams-lib
+- diagrams-svg
+- SVGFonts
+- optparse-applicative
+- mtl
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  svg-subtitler-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - svg-subtitler
+
+tests:
+  svg-subtitler-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - svg-subtitler

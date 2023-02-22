@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "svg-subtitler:lib"
+
+    - path: "./app/Main.hs"
+      component: "svg-subtitler:exe:svg-subtitler-exe"
+
+    - path: "./app/Paths_svg_subtitler.hs"
+      component: "svg-subtitler:exe:svg-subtitler-exe"
+
+    - path: "./test"
+      component: "svg-subtitler:test:svg-subtitler-test"
