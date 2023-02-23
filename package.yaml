@@ -45,7 +45,7 @@ library:
   source-dirs: src
 
 executables:
-  svg-subtitler-exe:
+  svg-subtitler:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
