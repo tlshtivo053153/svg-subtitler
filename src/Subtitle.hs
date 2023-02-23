@@ -42,7 +42,10 @@ subtitler f t = do
   let w = 16 / width (boundingRect diagram :: Diagram B)
       diagram' = if w < 1 then diagram # scale w
                           else diagram
-  rect 16 6.75 === diagram' # center
+      whole = (rect 16 6.75 # lw 0) === diagram' # center
+      wholeBack :: Diagram B
+      wholeBack = boundingRect whole # fc green # lw 0
+  whole <> wholeBack
 
 -- nonascii 28 letters == ascii 56 letters
 charSizeJP :: Char -> Int
