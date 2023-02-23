@@ -18,7 +18,9 @@ subtitleText opts = d'
     d s = F.drop_rect (F.fit_height 0.75 $ F.svgText opts s) # stroke
     d' :: String -> Diagram B
     d' s = ((d s # fc white # lc white # lw 1)
-            <> (d s # lc black # lw 4)) # center
+            <> (d s # lc black # lw 6)
+            <> (d s # fc white # lc white # lw 12)
+           ) # center
 
 subtitler :: PreparedFont Double -> String -> Diagram B
 subtitler f t = do
