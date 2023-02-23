@@ -28,6 +28,7 @@ dependencies:
 - SVGFonts
 - optparse-applicative
 - mtl
+- with-utf8
 
 ghc-options:
 - -Wall

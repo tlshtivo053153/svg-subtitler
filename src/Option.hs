@@ -5,11 +5,15 @@ module Option
   ( MyCustom(..)
   ) where
 
+import qualified System.IO as IO
+import qualified System.IO.Utf8 as Utf8
+
 import Diagrams.Backend.CmdLine
 import Diagrams.Backend.SVG.CmdLine
 import Diagrams.Prelude             hiding ((<>))
 import Options.Applicative
 import Control.Monad (zipWithM_)
+import Control.Monad.IO.Class (liftIO)
 
 import qualified Graphics.SVGFonts as F
 import Graphics.SVGFonts.ReadFont (PreparedFont)
@@ -37,6 +41,7 @@ instance Mainable (MyCustom MyDiagram) where
     let ( DiagramOpts w h _, loopOpts, prettyOpts) = opts
         toOpt out = ( DiagramOpts w h out, loopOpts, prettyOpts)
         opts' = map ( toOpt . (++ ".svg") . takeWhile (/= '.')) fs
-    fcontents <- mapM readFile fs
+        readFile' path = Utf8.openFile path IO.ReadMode >>= liftIO . IO.hGetContents
+    fcontents <- mapM readFile' fs
     let ds = map (d f) fcontents
     zipWithM_ mainRender opts' ds
