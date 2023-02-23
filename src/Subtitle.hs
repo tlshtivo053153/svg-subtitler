@@ -42,7 +42,8 @@ subtitler f t = do
   let w = 16 / width (boundingRect diagram :: Diagram B)
       diagram' = if w < 1 then diagram # scale w
                           else diagram
-      whole = (rect 16 6.75 # lw 0) === diagram' # center
+      h = 9 - height (boundingRect diagram' :: Diagram B)
+      whole = (rect 16 h # lw 0) === diagram' # center
       wholeBack :: Diagram B
       wholeBack = boundingRect whole # fc green # lw 0
   whole <> wholeBack
