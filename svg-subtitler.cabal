@@ -39,6 +39,7 @@ library
     , diagrams-core
     , diagrams-lib
     , diagrams-svg
+    , filepath
     , mtl
     , optparse-applicative
     , with-utf8
@@ -58,6 +59,7 @@ executable svg-subtitler
     , diagrams-core
     , diagrams-lib
     , diagrams-svg
+    , filepath
     , mtl
     , optparse-applicative
     , svg-subtitler
@@ -79,6 +81,7 @@ test-suite svg-subtitler-test
     , diagrams-core
     , diagrams-lib
     , diagrams-svg
+    , filepath
     , mtl
     , optparse-applicative
     , svg-subtitler

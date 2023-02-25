@@ -29,6 +29,7 @@ dependencies:
 - optparse-applicative
 - mtl
 - with-utf8
+- filepath
 
 ghc-options:
 - -Wall
